@@ -68,7 +68,7 @@ class Animials():
         server.starttls()
         server.login(self.email, self.email_password)
         server.sendmail(self.email, self.my_number, msg.as_string())
-        #  server.sendmail(self.email, self.her_number, msg.as_string())
+        server.sendmail(self.email, self.her_number, msg.as_string())
         server.quit()
 
         return True
