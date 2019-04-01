@@ -12,7 +12,7 @@ Sends a random cute animal photo to my girlfriend
  Step #1 has repeat of some subreddits. This is to add 'weight' to certain subreddits, which are currently ones that are more active and 
  are more likely to produce better quality content at a faster pace than others. 
   
- Step #2 avoids GIFs as they were being deleted from the message when being sent. 
+ Step #2 avoids GIFv file types as they were being deleted from the message when being sent. 
   
  Step #4, if you send an email to someones phone number with their phone carrier's MMS domain gateway, then it gets sent to their phone as a
  text message. For example, if my phone service provider is T-Mobile, then I would send the email to `1234567890@tmomail.net` and that would
