@@ -39,7 +39,7 @@ class Animials():
 
         submission = reddit.subreddit(sub).search(query='site:i.imgur.com',
                                                   sort='top', time_filter='day',
-                                                  limit=20)
+                                                  limit=10)
 
         for result in submission:
             file_type = result.url.split('.')[-1]
