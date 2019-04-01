@@ -22,5 +22,4 @@ Sends a random cute animal photo to my girlfriend
  ## To-Do:
   1. Tests.
   2. Make it more stable. Currently randomly breaks around step #2 when finding an image. The `run.py` script uses recursion to currently catch when it fails and I'd eventually like it to be stable enough to always run.
-  3. Get GIFs to be able to send.
-  4. Clean up code. Try to reduce number of imports and length of some functions.
+  3. Clean up code. Try to reduce number of imports and length of some functions. Maybe make it closer to an actual class.
