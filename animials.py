@@ -25,8 +25,9 @@ class Animials():
         subs = ['aww', 'Eyebleach', 'MEOW_IRL', 'teefies', 'floof', 'corgis',
                 'tuckedinkitties', 'incorgnito', 'Daww', 'catsonglass', 'blep',
                 'catbellies', 'pimpcats', 'Delighfullychubby', 'aww', 'floof',
-                'cats', 'Awwducational', 'hardcoreaww', 'kittens',
-                'stolendogbeds', 'Sleepinganimals', 'CatsInSinks']
+                'cats', 'hardcoreaww', 'kittens',
+                'stolendogbeds', 'Sleepinganimals', 'CatsInSinks',
+                'supermodelcats']
         return random.choice(subs)
 
     def get_image(self, sub):
@@ -42,10 +43,10 @@ class Animials():
 
         for result in submission:
             file_type = result.url.split('.')[-1]
-            if file_type not in 'gifv':
+            if file_type != 'gifv':
                 response = requests.get(result.url, stream=True)
 
-                with open('img.png', 'wb') as out_file:
+                with open('img.' + file_type, 'wb') as out_file:
                     shutil.copyfileobj(response.raw, out_file)
                 del response
                 return result
@@ -53,10 +54,14 @@ class Animials():
     def title(self, submission):
         return submission.title
 
-    def create_message(self, title):
-        img_data = open('img.png', 'rb').read()
+    def file_type(self, submission):
+        print(submission.url.split('.')[-1])
+        return submission.url.split('.')[-1]
+
+    def create_message(self, title, file_type):
+        img_data = open('img.' + file_type, 'rb').read()
         msg = MIMEMultipart()
-        image = MIMEImage(img_data, _subtype='png')
+        image = MIMEImage(img_data, _subtype=file_type)
         msg.attach(image)
         if(title):
             msg.attach(MIMEText(title))
